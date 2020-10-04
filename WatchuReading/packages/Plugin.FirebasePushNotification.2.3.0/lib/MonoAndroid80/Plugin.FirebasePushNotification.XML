@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.FirebasePushNotification</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.FirebasePushNotification.FirebasePushNotificationManager">
+            <summary>
+            Implementation for Feature
+            </summary>
+        </member>
+        <member name="M:Plugin.FirebasePushNotification.PNFirebaseIIDService.OnTokenRefresh">
+            Called if InstanceID token is updated. This may occur if the security of
+            the previous token had been compromised. Note that this is called when the InstanceID token
+            is initially generated so this is where you would retrieve the token.
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.TitleKey">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.TextKey">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.SubtitleKey">
+            <summary>
+            Subtitle
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.MessageKey">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.BodyKey">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.AlertKey">
+            <summary>
+            Alert
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.IdKey">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.TagKey">
+            <summary>
+            Tag
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.ActionKey">
+            <summary>
+            Action Click
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.CategoryKey">
+            <summary>
+            Category
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.SilentKey">
+            <summary>
+            Silent
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.ActionNotificationIdKey">
+            <summary>
+            ActionNotificationId
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.ActionNotificationTagKey">
+            <summary>
+            ActionNotificationTag
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.ActionIdentifierKey">
+            <summary>
+            ActionIdentifier
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.ColorKey">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.IconKey">
+            <summary>
+            Icon
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.SoundKey">
+            <summary>
+            Sound
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.PriorityKey">
+            <summary>
+            Priority
+            </summary>
+        </member>
+        <member name="F:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.ChannelIdKey">
+            <summary>
+            Channel id
+            </summary>
+        </member>
+        <member name="M:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.ResolveLocalizedParameters(Android.Support.V4.App.NotificationCompat.Builder,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Resolves the localized parameters using the string resources, combining the key and the passed arguments of the notification.
+            </summary>
+            <param name="notificationBuilder">Notification builder.</param>
+            <param name="parameters">Parameters.</param>
+        </member>
+        <member name="M:Plugin.FirebasePushNotification.DefaultPushNotificationHandler.OnBuildNotification(Android.Support.V4.App.NotificationCompat.Builder,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Override to provide customization of the notification to build.
+            </summary>
+            <param name="notificationBuilder">Notification builder.</param>
+            <param name="parameters">Notification parameters.</param>
+        </member>
+        <member name="T:Plugin.FirebasePushNotification.CrossFirebasePushNotification">
+            <summary>
+            Cross platform FirebasePushNotification implemenations
+            </summary>
+        </member>
+        <member name="P:Plugin.FirebasePushNotification.CrossFirebasePushNotification.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+    </members>
+</doc>

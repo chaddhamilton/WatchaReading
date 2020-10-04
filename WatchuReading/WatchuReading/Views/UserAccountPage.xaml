@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WatchuReading.Views.UserAccountPage"
+    Title ="Watcha Reading? - Account Home" 
+    BackgroundColor="Silver" 
+    >
+	<ContentPage.Content>
+    <RelativeLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+    <Image 
+        Source="ReadingSplash"
+        Aspect="Fill" 
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+        />
+
+      <!-- LOGIN -->
+      <Frame CornerRadius="10"
+        OutlineColor="Silver" 
+        WidthRequest="300"
+        Padding="0,20,0,0" Margin="10" 
+        HorizontalOptions="Center" 
+        VerticalOptions="Center"
+        IsVisible="{Binding ShowLogin}"
+         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}" >
+      <StackLayout x:Name="login"
+               WidthRequest="250"
+               BackgroundColor="White"
+                Padding="20"
+                    >
+                   
+                <ActivityIndicator x:Name="actLogin" 
+                 HorizontalOptions="CenterAndExpand"
+                 IsRunning="true" Margin="10"
+                 Color="Gray" 
+                 IsVisible="{Binding IsBusy}" />
+                
+                <Entry Placeholder="Login Name" Text="{Binding UserName}" />
+                <Entry Placeholder="Password" IsPassword="true"  Text="{Binding Password}" />
+                <Button Text="Log My Ass In" Command="{Binding LoginCommand}" IsEnabled="{Binding EnableLoginButton}" Style="{StaticResource btnBlack}" />
+                <Button Text="Send me my Password" Command="{Binding SendPasswordCommand}" Style="{StaticResource btnBlack}" IsVisible="{Binding ForgotPassword}" />
+                <Button Text="Go Back" Command="{Binding ShowViewCommand}" CommandParameter="Default"  Style="{StaticResource btnBlack}" />
+                
+    </StackLayout>
+               
+               </Frame>
+    <!-- ADD NEW USER -->
+    <StackLayout x:Name="addNew"
+             IsVisible="{Binding ShowNewUser}"
+             BackgroundColor="White"
+             WidthRequest="400"
+             Spacing="2" 
+             MinimumWidthRequest="200"
+             Margin="20,0,20,0"
+                VerticalOptions="Center"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                >
+                
+                <ActivityIndicator x:Name="actCreate" 
+                 HorizontalOptions="CenterAndExpand"
+                 IsRunning="true" Margin="20"
+                 Color="Gray" 
+                 IsVisible="{Binding IsBusy}" />
+                <Label Text="Just need a few things from you..." 
+                FontAttributes="Bold" 
+                FontSize="20"
+                Margin="0,20,0,40"
+                HorizontalOptions="CenterAndExpand"
+                />
+                <Entry Placeholder="First Name" Text="{Binding FName}"  />
+                <Entry Placeholder="Last Name" Text="{Binding LName}" />
+                <Entry Placeholder="Email" Text="{Binding Email}" />
+                
+                <Entry Placeholder="Make up a cool Login Name" Text="{Binding NewUserName}"  />
+                <Entry Placeholder="Password" Text="{Binding NewPassword}" />
+                <Button Text="Create My Account" Command="{Binding AddNewCommand}" IsEnabled="{Binding EnableAddButton}" Style="{StaticResource btnBlack}" />
+                 <Button Text="Cancel" Command="{Binding ShowViewCommand}" CommandParameter="Default"  Style="{StaticResource btnBlack}" />
+                
+            </StackLayout>
+    <Frame
+          HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="Center"
+                BackgroundColor="White"
+                Margin="20, 100,20,0" Padding="10"
+                IsVisible="{Binding ShowButtons} "> 
+   <StackLayout IsClippedToBounds="false"
+                
+                IsVisible="{Binding ShowButtons}" 
+                Padding="10"
+                BackgroundColor="White"
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="Center"
+                Margin="20" 
+                >
+   <Button Text="I Have An Account" Command="{Binding ShowViewCommand}" CommandParameter="Login" Style="{StaticResource btnBlack}" />
+   <Button Text="I Need To Create An Account" Command="{Binding ShowViewCommand}" CommandParameter="New" Style="{StaticResource btnBlack}" />
+   </StackLayout>
+                </Frame>
+
+          <Button Text="test" Command="{Binding MyBookshelfCommand}" CommandParameter="test" />   
+   </RelativeLayout>
+</ContentPage.Content>
+</ContentPage>

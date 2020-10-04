@@ -1,0 +1,59 @@
+﻿xmlns:local="clr-namespace:WatchuReading.Views; assembly=WatchuReading"
+  <local:ListView x:Name="-NAME-" ItemsSource="{Binding }" 
+                VerticalOptions="FillAndExpand" 
+                HasUnevenRows="true" 
+                RefreshCommand="{Binding }"
+                IsPullToRefreshEnabled="true" 
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+                ItemClickCommand="{Binding }"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                             <StackLayout Padding="10">
+                                <Label Text="{Binding Title}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16"
+                                TextColor="Black"
+                                BackgroundColor="{Binding IsReading, Converter={StaticResource StrToColorInvert}}"
+                                />
+                            </StackLayout>
+                          
+                          
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </local:ListView>
+
+
+
+  CONVERTER
+  DEF 
+  xmlns:converters="clr-namespace:WatchuReading.Helpers; assembly=WatchuReading"
+
+  REF
+     <ContentPage.Resources>
+      <ResourceDictionary>
+      <converters:StringToColorConverter x:Key="StrToColorInvert" />
+      <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+  USAGE
+    BackgroundColor="{Binding IsReading, Converter={StaticResource StrToColorInvert}}"
+    IsVisible="{Binding IsReading, Converter={StaticResource NullToBoolConverter}}"
+
+
+
+    END
+
+
+
+
+             <Button Grid.Column="2" Grid.Row="0" 
+                               Text="Mark As Read" 
+                               Command="{Binding Source={x:Reference MyActivityListPage}, Path=BindingContext.MarkAsReadCommand}"
+                               CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}" 
+                               IsVisible="{Binding IsReading, Converter={StaticResource NullToBoolConverter}}"
+                                />

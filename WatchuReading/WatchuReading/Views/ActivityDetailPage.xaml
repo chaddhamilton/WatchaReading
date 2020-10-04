@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="WatchuReading.Views.ActivityDetailPage"
+    Title="{Binding Title}"
+    >
+	<ContentPage.Content>
+    <StackLayout Spacing="5" Padding="10">
+    <ActivityIndicator x:Name="actCreate" 
+                 HorizontalOptions="CenterAndExpand"
+                 IsRunning="true" Margin="20"
+                 Color="Gray" 
+                 IsVisible="{Binding IsBusy}" />
+            <Grid>
+            <Grid.RowDefinitions>
+                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />  
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                 <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>    
+        <Image Source="{Binding Activity.Book.ImageUrl}" HeightRequest="150" Grid.Row="0" Grid.ColumnSpan="2"></Image>
+        <Label Text="{Binding Activity.Book.Title}" FontSize="Medium" TextColor="Black" Grid.Row="1" Grid.ColumnSpan="2"  />
+        <Label Text="{Binding Activity.Book.Author}" FontSize="Small" Grid.Row="2" Grid.ColumnSpan="2" />
+
+       
+        <Label Text="Currently Reading?" TextColor="#201D1D" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" />
+        <Switch IsToggled="{Binding Activity.IsReading}" Grid.Row="3" Grid.Column="1"/>
+
+         <Label Text="Is Favorited?" TextColor="#201D1D" Grid.Row="4" Grid.Column="0" Margin="0,10,0,0" />
+        <Switch IsToggled="{Binding Activity.IsFavorite}" Grid.Row="4" Grid.Column="1"/>
+
+       <StackLayout Padding="0" VerticalOptions="Center" Grid.Row="5" Grid.Column="0" >
+        <Label Text="Comments" />
+        <BoxView BackgroundColor="Black" WidthRequest="50" HeightRequest="1" Margin="0,-8,0,0" />
+      </StackLayout>
+       
+        <Editor Grid.ColumnSpan="2" Text="{Binding Activity.Comment}" Grid.Row="6" VerticalOptions="FillAndExpand"
+                Keyboard="Chat"  HeightRequest="100" FontSize="Small"/>
+     
+        <Label Text="Your Rating" Grid.Row="7" Grid.ColumnSpan="2" />
+        <Stepper Value="{Binding Activity.Rating}" 
+                Minimum="1" Maximum="10" HorizontalOptions="CenterAndExpand" Grid.Row="8" Grid.ColumnSpan="2" />
+        <Label Text="{Binding Activity.Rating}"  HorizontalOptions="CenterAndExpand" Grid.Row="9" Grid.ColumnSpan="2"/>
+        <Button Text="Save Details"
+                IsEnabled="{Binding IsSaveVisible}"
+                Command="{Binding SaveBookCommand}"
+                Grid.Row="10"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource btnBlack}"/>
+                   </Grid>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

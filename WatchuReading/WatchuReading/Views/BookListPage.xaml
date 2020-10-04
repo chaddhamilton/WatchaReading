@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WatchuReading.Views.BookListPage"
+    xmlns:local="clr-namespace:WatchuReading.Views; assembly=WatchuReading"
+    xmlns:converters="clr-namespace:WatchuReading.Helpers; assembly=WatchuReading"
+    x:Name="BookListPage"
+    Title="{Binding Title}">
+	
+        <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add A Book" Command="{Binding AddBookCommand }" />
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
+ <StackLayout> 
+            
+            <SearchBar x:Name="searchBox" Placeholder="Search By Title" HeightRequest="40" TextChanged="SearchBar_TextChanged" />
+            <local:ListView x:Name="LibraryList"
+                ItemsSource="{Binding Library}"
+                VerticalOptions="FillAndExpand" 
+                HasUnevenRows="true" 
+                RefreshCommand="{Binding LoadItemsCommand}" 
+                IsPullToRefreshEnabled="true" 
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+                ItemClickCommand="{Binding BookDetailsCommand}" 
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell  Appearing="Cell_Appearing">
+                             <StackLayout Padding="2">
+                               <Grid x:Name="title">
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                 <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="Auto" />
+                                 <ColumnDefinition Width="Auto" />
+                                
+                                    </Grid.ColumnDefinitions>
+                              <Image Source="{Binding ImageUrl}" Grid.Column="0" Grid.Row="0" />
+                              <Label Text="{Binding LineItem}" Grid.Column="1" Grid.Row="0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="12"
+                                TextColor="Black"
+                                 Margin="20,0,0,0"/>
+                           </Grid>
+                                <Grid x:Name="Item" 
+                                    HorizontalOptions="CenterAndExpand"
+                                    IsVisible="{Binding ShowMenu}" 
+                                    Margin="40,0,0,0">
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                 <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="Auto" />
+                                 <ColumnDefinition Width="Auto" />
+                                 <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                              
+                               <Button Style="{StaticResource btnBlack}" 
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       Text="Details" 
+                               BindingContext="{Binding Source={x:Reference LibraryList}, Path=BindingContext}"   
+                               CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"
+                               Command="{Binding BookDetailsCommand}" />
+                                        
+                           
+                               <Button Grid.Column="1" Grid.Row="0" 
+                               Text="Who's Reading?" 
+                               Style="{StaticResource btnBlack}"
+                               BindingContext="{Binding Source={x:Reference LibraryList}, Path=BindingContext}"   
+                               CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"
+                               Command="{Binding EditActivityCommand}"
+                                    />
+       
+                               <Button Grid.Column="2" Grid.Row="0" 
+                               Text="Start Reading"
+                               IsVisible="{Binding CanRead}"
+                               Command="{Binding StartReadingCommand}"
+                               BindingContext="{Binding Source={x:Reference LibraryList}, Path=BindingContext}"   
+                               CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}" 
+                               Style="{StaticResource btnBlack}"
+                                    />
+                                    
+                                </Grid>
+                            </StackLayout>
+                          
+                          
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </local:ListView>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

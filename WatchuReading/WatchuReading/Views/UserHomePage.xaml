@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="WatchuReading.Views.UserHomePage"
+    x:Name="UserHomePage"
+    xmlns:converters="clr-namespace:WatchuReading.Helpers; assembly=WatchuReading"
+    xmlns:local="clr-namespace:WatchuReading.Views; assembly=WatchuReading"
+    Title="{Binding Title}"
+    BackgroundImage="ReadingBGTrans"
+    >
+    
+    <Frame CornerRadius="10"
+        OutlineColor="Silver"
+        Padding="0" Margin="10"
+        Opacity=".8">
+    <StackLayout Margin="10,20" BackgroundColor="White" >
+     <ActivityIndicator x:Name="actLogin" 
+                 HorizontalOptions="CenterAndExpand"
+                 IsRunning="true" Margin="10"
+                 Color="Gray" 
+                 IsVisible="{Binding IsBusy}" />
+            
+        <Label HorizontalOptions="CenterAndExpand"  Text="{Binding ActivityStatusHeader}" 
+                FontSize="Large" TextColor="Black">
+    <!--        <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+            <On Platform="Android" Value="GeosansLight.ttf#GeosansLight" />
+                </OnPlatform>
+            </Label.FontFamily>/>--> 
+        </Label>
+    
+                                <Image Source="{Binding ActiveBook.Book.ImageUrl}"
+                                IsVisible="{Binding ShowFinished}"
+                                HeightRequest="250" />
+                                <Label Text="{Binding ActiveBook.Title}" 
+                                LineBreakMode="WordWrap" 
+                                HorizontalOptions="CenterAndExpand"
+                                FontSize="20"
+                                TextColor="Black"
+                                BackgroundColor="White" />
+
+       <Button Text="Start A New Book!"
+                Style="{StaticResource btnBlack}"
+                VerticalOptions="Start" 
+                Command="{Binding AllBooksCommand}"
+                IsVisible="{Binding ShowStartReading}"
+                
+            />
+          
+            <Button Text="Mark as Finished"
+                VerticalOptions="Start" 
+                Command="{Binding FinishedCommand}"
+                Style="{StaticResource btnBlack}"
+                IsVisible="{Binding ShowFinished}"
+                 />
+            
+                 <Button Text="Who's Reading What?"
+                VerticalOptions="Start" 
+                CommandParameter="All"
+                Command="{Binding ReadingListCommand}"
+                Style="{StaticResource btnBlack}" />
+               
+
+            
+    </StackLayout> 
+    </Frame>
+   
+     <ContentPage.ToolbarItems>
+     <ToolbarItem Text="My Bookshelf" Order="Secondary" Command="{Binding MyBookshelfCommand}" />
+     <ToolbarItem Text="Book Archive" Order="Secondary" Command="{Binding AllBooksCommand}" />
+     <ToolbarItem IsEnabled="{Binding IsDebug}" Text="Clear Cache" Order="Secondary" Command="{Binding RefreshCommand}" />
+    </ContentPage.ToolbarItems>
+
+</ContentPage>

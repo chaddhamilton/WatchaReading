@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{004AE5B1-E1BB-471F-B68C-2990ECC976AB}|Default">
+  <MonoDevelop.Ide.ItemProperties.WatchuReading.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.ABA234D6-0784-46F5-A55E-E73CB4FFDB43" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WatchuReading/ViewModels/UserAccountViewModel.cs">
+    <Files>
+      <File FileName="WatchuReading/ViewModels/UserHomeViewModel.cs" Line="14" Column="56" />
+      <File FileName="WatchuReading/Views/UserHomePage.xaml.cs" Line="15" Column="34" />
+      <File FileName="WatchuReading/Views/UserHomePage.xaml" Line="75" Column="1" />
+      <File FileName="WatchuReading/Views/UserAccount.xaml.cs" Line="22" Column="14" />
+      <File FileName="WatchuReading/ViewModels/UserAccountViewModel.cs" Line="37" Column="12" />
+      <File FileName="WatchuReading/Views/UserAccountPage.xaml" Line="112" Column="1" />
+      <File FileName="WatchuReading/ViewModels/AllActivityViewModel.cs" Line="28" Column="13" />
+      <File FileName="packages/Plugin.CurrentActivity.2.0.1.4/readme.txt" Line="1" Column="1" />
+      <File FileName="WatchuReading/Views/MainPage.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="13" Column="15" />
+      <File FileName="Droid/MessageAndroid.cs" Line="41" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WatchuReading.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="80" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="83" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="85" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="66" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="58" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="60" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="110" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="112" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="115" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="124" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="108" column="14" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="50" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="47" column="1" />
+      <Breakpoint file="/Users/chamilton/Projects/WatchuReading/WatchuReading/ViewModels/UserAccountViewModel.cs" relfile="WatchuReading/ViewModels/UserAccountViewModel.cs" line="46" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WatchuReading PreferredExecutionTarget="Android.192.168.57.101:5555" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.WatchuReading.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+</Properties>

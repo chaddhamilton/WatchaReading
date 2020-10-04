@@ -1,0 +1,13 @@
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.csproj.CoreCompileInputs.cache
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.AdminPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.App.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.BookListPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.UserAccountPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.UserHomePage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.ActivityListPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.ActivityDetailPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.AddBookPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.BookDetailsPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WhatchuReading.Droid.Views.AllActivityListPage.xaml.g.cs
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WatchuReading.dll
+/Users/chamilton/Projects/WatchuReading/Droid/obj/Release/WatchuReading.pdb

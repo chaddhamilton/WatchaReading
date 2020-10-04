@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WatchuReading.Views.BookDetailsPage"
+    Title="{Binding Title}" BackgroundImage="ReadingBGTrans"
+  >
+	<ContentPage.Content>
+        
+    <Frame CornerRadius="10"
+        OutlineColor="Black"
+        Padding="20" Margin="10"
+        Opacity=".85" >
+    <StackLayout Margin="5" 
+                BackgroundColor="White"
+               >
+
+        <Image Source="{Binding CurBook.ImageUrl}" HeightRequest="150"></Image>
+        <Label Text="{Binding CurBook.Title}" FontSize="Large" TextColor="Black">
+        <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+            <On Platform="Android" Value="Quicksand-Book.otf#Quicksand-Book" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+      <Label Text="{Binding CurBook.Author}"></Label>
+     <Label Text="{Binding CurBook.PublishedDate}"></Label>
+     <Label Text="{Binding CurBook.Description}" TextColor="Black" />
+     <Grid >
+
+    
+                <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                 <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="Auto" />
+                                 <ColumnDefinition Width="Auto" />
+                               
+                                    </Grid.ColumnDefinitions>
+                                    
+        <Label Text="Average Rating (1-10):" TextColor="Black" Grid.Column="0" />  
+        <Label Text="{Binding CurBook.Rating}" Grid.Column="1" TextColor="Black"/>
+      </Grid>
+
+                                <Grid x:Name="Item" 
+                                    HorizontalOptions="CenterAndExpand"
+                                  Margin="10">
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                 <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="Auto" />
+                                 <ColumnDefinition Width="Auto" />
+                               
+                                    </Grid.ColumnDefinitions>
+                                    
+                 <Button Grid.Column="0" Grid.Row="0" 
+                               Text="Who's Read It?" 
+                               Style="{StaticResource btnBlack}"
+                               Command="{Binding WhoIsReadingCommand}"
+                        />
+       
+                               <Button Grid.Column="1" Grid.Row="0" 
+                               Text="Start Reading"
+                               IsVisible="{Binding CanShowRead}"
+                               Command="{Binding StartReadingCommand}"
+                               Style="{StaticResource btnBlack}"
+                                    />
+                </Grid>
+    </StackLayout>
+        
+        </Frame>
+	</ContentPage.Content>
+</ContentPage>

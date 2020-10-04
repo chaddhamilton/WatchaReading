@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WatchuReading.Views.AddBookPage"
+    xmlns:local="clr-namespace:WatchuReading.Views; assembly=WatchuReading"
+    x:Name="AddBookPage"
+    Title="{Binding Title}"
+    >
+    
+	<ContentPage.Content>
+     <Frame CornerRadius="10"
+        OutlineColor="Silver"
+        Padding="20" Margin="10"
+        Opacity=".8">
+    <StackLayout Margin="5" BackgroundColor="White" >
+
+        <Label Text="{Binding HelpText}" FontSize="Medium" TextColor="Black">
+        <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+            <On Platform="Android" Value="GeosansLight.ttf#GeosansLight" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+                <Entry x:Name="searchBox" Text="{Binding SearchText}" Placeholder="Search By Title / Author"></Entry>
+                <Button Text="Search" Command="{Binding DoSearchCommand}" />
+
+
+             <local:ListView x:Name="ResultsList" ItemsSource="{Binding SearchResults}" 
+                VerticalOptions="FillAndExpand" 
+                HasUnevenRows="true" 
+                RefreshCommand="{Binding LoadItemsCommand}" 
+                IsPullToRefreshEnabled="true" 
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+                ItemClickCommand="{Binding AddToLibraryCommand}"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                            <ImageCell ImageSource="{Binding ImageUrl}" Text="{Binding Title}" Detail="{Binding Author}" >
+                            </ImageCell>
+                     </DataTemplate>
+                    </ListView.ItemTemplate>
+                </local:ListView>
+
+                </StackLayout>
+            </Frame>
+        
+        
+	</ContentPage.Content>
+</ContentPage>

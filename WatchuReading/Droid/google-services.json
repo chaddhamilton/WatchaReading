@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "653938542919",
+    "firebase_url": "https://whatchureading.firebaseio.com",
+    "project_id": "whatchureading",
+    "storage_bucket": "whatchureading.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653938542919:android:b8455014d44685bc",
+        "android_client_info": {
+          "package_name": "Chaddly.WatchuReading"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653938542919-rgvuk2sd1ajb1merq2uevehlot0uti4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcOd06gW2Lo3LmmHX8TPX_p9yctBIVInI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

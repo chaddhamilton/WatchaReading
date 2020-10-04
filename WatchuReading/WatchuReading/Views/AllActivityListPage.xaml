@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="WatchuReading.Views.AllActivityListPage" 
+    xmlns:local="clr-namespace:WatchuReading.Views; assembly=WatchuReading"
+    xmlns:converters="clr-namespace:WatchuReading.Helpers; assembly=WatchuReading"
+    x:Name="AllActivityListPage"
+    BackgroundImage="ReadingBGTrans"
+    Title="{Binding Title}" >
+
+	<ContentPage.Content>
+   
+
+    <Frame CornerRadius="10"
+        OutlineColor="Silver"
+        Padding="0" Margin="10"
+        Opacity=".8">
+    <StackLayout Margin="10,20" BackgroundColor="White" >
+   <local:ListView x:Name="ActivityList" 
+                ItemsSource="{Binding Activities}" 
+                VerticalOptions="FillAndExpand" 
+                HasUnevenRows="true" 
+                IsPullToRefreshEnabled="true" 
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+                ItemClickCommand="{Binding SelectedActivityCommand}"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                             <StackLayout Padding="10">
+
+                             <Grid HorizontalOptions="StartAndExpand"
+                                >
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                 <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="Auto" />
+                                 <ColumnDefinition Width="*" />
+                             
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" 
+                                            Grid.Row="0"
+                                            WidthRequest="30"
+                                            Source="magnify.png"  HorizontalOptions="Start"
+                                            />        
+                                <Label Text="{Binding LineItem}" 
+                                LineBreakMode="WordWrap" 
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="14"
+                                TextColor="Black"
+                                            Grid.Row="0" Grid.Column="1"
+                                >
+                             
+                                            
+                                <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+            <On Platform="Android" Value="Quicksand-Bold.otf#Quicksand-Bold" />
+                </OnPlatform>
+            </Label.FontFamily>
+                                </Label>
+                                </Grid>
+
+                                    
+                                <Grid x:Name="Item" HorizontalOptions="Center"
+                                    IsVisible="{Binding ShowMenu}">
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                 <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="Auto" />
+                                 <ColumnDefinition Width="Auto" />
+                             
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Button Grid.Column="0" Grid.Row="0"
+                                    Command ="{Binding BindingContext.ViewUserBooksCommand, Source={x:Reference ActivityList}"
+                                    CommandParameter="{Binding .}" Text="{Binding B1Text}" 
+                                    Style="{StaticResource btnBlack}"
+                                    FontSize="Small"
+                                    />
+                                        
+                  
+                              <Button Grid.Column="1" Grid.Row="0"
+                                    Command ="{Binding BindingContext.StartReadingCommand, Source={x:Reference ActivityList}"
+                                    CommandParameter="{Binding .}" Text="{Binding B2Text}" 
+                                    Style="{StaticResource btnBlack}"
+                                    FontSize="Small"
+                                    />
+                                        
+              
+                                </Grid>
+                            </StackLayout>
+                          
+                          
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </local:ListView>
+        </StackLayout>
+                </Frame>
+      
+
+        
+	</ContentPage.Content>
+</ContentPage>
